@@ -1,0 +1,11 @@
+const { Router } = require("express");
+const AlmacenController = require("../controller/almacenController");
+const controller = new AlmacenController();
+const router = Router();
+router.get("/", controller.obtenerProducto);
+router.get("/:id", controller.obtenerProductoId);
+router.get("/buscar/:nombre", controller.obtenerProductoNombre);
+router.post("/", controller.agregarProducto);
+router.put("/:id", controller.actualizarProducto);
+router.delete("/:id", controller.eliminarProducto);
+module.exports = router;
